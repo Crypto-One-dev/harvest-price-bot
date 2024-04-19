@@ -70,7 +70,6 @@ const priceCheck = async () => {
 		const apiData = await axios.get(`http://api.harvest.finance/vaults?key=${API_KEY}`)
     
 		const fetchPromises = chainNames.map(async (chainName) => {
-      // let apiVaultData = apiData.data[chainName];
       const url = subgraphs[chainName];
       return fetch(url, requestOptions)
         .then(response => response.json())
